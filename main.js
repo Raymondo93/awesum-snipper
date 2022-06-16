@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 
-export function getSnippet() {
+function getSnippet() {
   let element = document.getElementById("selectbox-select").value;
   let el = document.querySelector(element);
   console.log(el);
