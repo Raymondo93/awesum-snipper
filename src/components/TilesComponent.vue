@@ -4,11 +4,11 @@ import Tile from "./atoms/Tile.vue";
 </script>
 
 <template>
-  <section id="component-tiles">
+  <div id="component-tiles" class="fit">
     <div class="tiles">
       <Tile />
       <Tile />
       <Tile />
     </div>
-  </section>
+  </div>
 </template>

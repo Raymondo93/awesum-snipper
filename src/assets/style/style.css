@@ -19,7 +19,7 @@ body {
 }
 
 #hidden-components > * {
-   /*display: none;*/
+   display: none;
 }
 
 .boxes {
@@ -69,6 +69,13 @@ body {
 
 .tiles {
   display: block;
+}
+
+.tile-image {
+  display: block;
+  width: 100%;
+  height: auto;
+
 }
 
 .tile {

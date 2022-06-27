@@ -2,19 +2,18 @@
 // const fs = require('fs');
 
 export function getSnippet(e) {
-  let element = e.value;
-  let el = document.querySelector(element);
-  console.log(el);
-  printSnippetHTML(document.querySelector('#' + element));
-  getCssFile();
+  let el = document.querySelector(e);
+  printSnippetHTML(document.querySelector('#' + e));
+  return el;
+  // getCssFile();
 }
 
 function printSnippetHTML(snippet) {
   let showingElement = document.querySelector('#showed-component');
-  let snippetElement = document.querySelector('.snippet-code');
+  // let snippetElement = document.querySelector('.snippet-code');
   console.log(snippet);
   showingElement.insertAdjacentHTML('afterbegin', snippet.getInnerHTML());
-  snippetElement.insertAdjacentHTML('afterbegin', snippet.getInnerHTML());
+  // snippetElement.insertAdjacentHTML('afterbegin', snippet.getInnerHTML());
 }
 
 

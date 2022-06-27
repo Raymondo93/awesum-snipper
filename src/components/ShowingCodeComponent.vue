@@ -3,8 +3,7 @@
 </script>
 
 <template>
-    <section id="snippet-component">
-      <xmp class="snippet-code">
-        </xmp>
+    <section id="snippet-component" class="fit">
+
     </section>
 </template>
