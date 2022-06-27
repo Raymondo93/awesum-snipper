@@ -19,7 +19,7 @@ body {
 }
 
 #hidden-components > * {
-  /* display: none; */
+   display: none;
 }
 
 .boxes {
