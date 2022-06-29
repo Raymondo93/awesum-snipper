@@ -11,8 +11,9 @@ export function getSnippet(e) {
 function printSnippetHTML(snippet) {
   let showingElement = document.querySelector('#showed-component');
   // let snippetElement = document.querySelector('.snippet-code');
+
   console.log(snippet);
-  showingElement.insertAdjacentHTML('afterbegin', snippet.getInnerHTML());
+  // showingElement.insertAdjacentHTML('afterbegin', snippet.getInnerHTML());
   // snippetElement.insertAdjacentHTML('afterbegin', snippet.getInnerHTML());
 }
 
