@@ -29,9 +29,9 @@ function checkBlock(block) {
       let propertyValue = dirtyProperty.split(":");
       if (!propertyValue[0].replace(/\s|\t/g, "").startsWith("/*")) {
         if (!propertyValue[0].replace(/\s|\t/g, "").startsWith("*/")) {
-          properties[propertyValue[0].replace(/\s/g, "")] = propertyValue[1];
+          properties[propertyValue[0].replace(/\s|\t/g, "")] = propertyValue[1];
         } else {
-          properties[propertyValue[0].replace(/\s/g, "").substring(2)] = propertyValue[1];
+          properties[propertyValue[0].replace(/\s|\t/g, "").substring(2)] = propertyValue[1];
 
         }
       }
