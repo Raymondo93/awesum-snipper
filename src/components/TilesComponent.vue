@@ -4,7 +4,7 @@ import Tile from "./atoms/Tile.vue";
 </script>
 
 <template>
-  <div id="component-tiles" class="fit">
+  <div id="component-tiles">
     <div class="tiles">
       <Tile />
       <Tile />
