@@ -84,3 +84,21 @@ body {
 .tile-content-box {
   color: red;
 }
+
+.button {
+  display: block;
+  margin: 15px auto;
+  border-radius: 15px;
+}
+
+.primary-button {
+  background-color: chartreuse;
+  width: 75%;
+  height: 50px;
+}
+
+.secondary-button {
+  background-color: darkturquoise;
+  width: 50%;
+  height: 30px;
+}
