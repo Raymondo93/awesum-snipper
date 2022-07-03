@@ -7,19 +7,16 @@
 export function getClassList(element) {
   let list = [];
   let data = crawl(element, list);
+  // Return a set to remove all the dupes
   return [...new Set(data)]
 }
 
 function crawl(element, list) {
   if (element.hasChildNodes()) {
-    // console.log(element.children);
-
     for (let i = 0; i < element.children.length; i++) {
       crawl(element.children[i], list);
     }
   }
-
   list.push(element.classList.value);
-
   return list;
 }
