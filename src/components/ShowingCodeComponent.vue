@@ -5,13 +5,22 @@ import {useSnippetStore} from "@/stores/snippet";
 
 const store = useSnippetStore();
 
+// store.getCssSnippet();
+
 </script>
 
 <template>
   <section id="snippet-component" class="fit">
+    <h3>HTML snippet code</h3>
     <pre>
       <code>
-        {{store.snippet}}
+        {{store.htmlSnippet}}
+      </code>
+    </pre>
+    <h3>CSS snippet code</h3>
+    <pre>
+      <code>
+        {{store.cssSnippet}}
       </code>
     </pre>
   </section>

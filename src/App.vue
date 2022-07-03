@@ -23,9 +23,7 @@ import HomeView from "@/views/HomeView.vue";
 
 <style>
 @import '@/assets/style/style.css';
-body {
-  background-color: black;
-}
+
 /*#app {*/
 /*  max-width: 1280px;*/
 /*  margin: 0 auto;*/
