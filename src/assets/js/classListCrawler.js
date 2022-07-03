@@ -17,6 +17,10 @@ function crawl(element, list) {
       crawl(element.children[i], list);
     }
   }
-  list.push(element.classList.value);
+  if (element.classList.value !== "") {
+    let classList = element.classList.value.split(" ");
+    list.push(classList);
+  }
+
   return list;
 }
