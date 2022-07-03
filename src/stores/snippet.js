@@ -1,31 +1,40 @@
 import {defineStore} from 'pinia';
 import formatStringToHtml from 'format-string-to-html';
-import fs from 'fs';
+import css from '@/assets/style/style.css?raw';
+import {parseToJson} from "../assets/js/cssToJsonParser";
+import {getClassList} from "../assets/js/classListCrawler";
 
 export const useSnippetStore = defineStore({
   id: 'snippet',
   state: () => ({
     component: '',
     isVisible: false,
-    snippet: ''
+    htmlSnippet: '',
+    cssSnippet: '',
   }),
   actions: {
     getSnippet(e) {
-      console.log(e.target.value);
       let code = document.getElementById(e.target.value);
       code.style.display = 'block';
-      this.snippet = new formatStringToHtml(code.getInnerHTML()).format();
-      console.log(this.snippet);
-      this.getCssSnippet();
+      this.htmlSnippet = new formatStringToHtml(code.getInnerHTML()).format();
+      let classList = getClassList(code);
+      console.log(classList);
+      this.getCssSnippet(code);
     },
-    getCssSnippet() {
-      fs.readFile('/home/ray/Workspace/projects/awesum-code-snipper/src/assets/style/style.css', function(err, result) {
-        if (err) {
-          console.log(err);
-          throw err;
+    getCssSnippet(code) {
+      let usedClassList = getClassList(code);
+      let cssJson = parseToJson(css);
+      let classes = [];
+      usedClassList.forEach((cssClass) => {
+        for (let i = 0; i < cssJson.length; ++i) {
+          console.log('class .' + cssClass);
+          console.log('json ' + cssJson[i].selectors);
+          if ('.' + cssClass === cssJson[i].selectors.trim()) {
+            classes.push(cssJson[i]);
+          }
         }
-        console.log('I have the data' + result);
       })
+      this.cssSnippet = classes;
     }
   }
 })
