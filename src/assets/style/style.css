@@ -67,6 +67,22 @@ body {
   display: block;
 }
 
+.tile {
+  display: inline-block;
+  margin: 0 -20px;
+}
+
+.tile--3 {
+  width: 33%;
+  padding: 0 33px;
+
+}
+
+.tile--4 {
+  width: 25%;
+  padding: 0 20px;
+}
+
 .tile-image {
   display: block;
   width: 100%;
@@ -75,13 +91,6 @@ body {
 
 .tile-image-box {
   margin-bottom: 8px;
-}
-
-.tile {
-  display: inline-block;
-  width: 33%;
-  margin: 0 -20px;
-  padding: 0 33px;
 }
 
 .tile:first-child {
