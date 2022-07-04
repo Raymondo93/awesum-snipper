@@ -36,8 +36,6 @@ body {
   display: inline-block;
   width: 33.33%;
   box-sizing: border-box;
-  /* border: 2px solid red; */
-  /* box-shadow: 10px 10px black; */
 }
 
 .box-link {
@@ -73,16 +71,37 @@ body {
   display: block;
   width: 100%;
   height: auto;
+}
 
+.tile-image-box {
+  margin-bottom: 8px;
 }
 
 .tile {
   display: inline-block;
   width: 33%;
+  margin: 0 -20px;
+  padding: 0 33px;
+}
+
+.tile:first-child {
+  padding-left: 0;
+}
+
+.tile:last-child {
+  padding-right: 0;
+}
+
+.tile-box {
+  padding: 0 20px;
 }
 
 .tile-content-box {
-  color: red;
+  margin-top: 7px;
+}
+
+.tile-title {
+  padding: 10px 0;
 }
 
 .button {
