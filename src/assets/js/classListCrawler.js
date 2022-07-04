@@ -8,6 +8,7 @@ export function getClassList(element) {
   let list = [];
   let data = crawl(element, list);
   // Return a set to remove all the dupes
+  console.log(data);
   return [...new Set(data)]
 }
 
@@ -19,7 +20,11 @@ function crawl(element, list) {
   }
   if (element.classList.value !== "") {
     let classList = element.classList.value.split(" ");
-    list.push(classList);
+    if(classList.length > 1) {
+      list.push(...classList);
+    } else {
+      list.push(classList);
+    }
   }
 
   return list;
