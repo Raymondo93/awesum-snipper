@@ -1,8 +1,10 @@
 <script setup>
-import {computed} from 'vue';
+import {computed, onUpdated} from 'vue';
 import {useButtonStore} from "../stores/buttons";
+import {useSnippetStore} from "../stores/snippet";
 
 const buttonStore = useButtonStore();
+const snippetStore = useSnippetStore();
 
 const getButtonStyle = computed(() => {
   switch (buttonStore.buttonType) {
@@ -17,6 +19,9 @@ const getButtonStyle = computed(() => {
   }
 });
 
+onUpdated(() => {
+  snippetStore.updateSnippet();
+})
 </script>
 
 <template>
