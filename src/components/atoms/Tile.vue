@@ -1,8 +1,15 @@
 <script setup>
 import StockImage from "@/assets/images/pexels-pixabay-162140.jpg";
 import {useTilesStore} from "../../stores/tiles";
+import {useSnippetStore} from "../../stores/snippet";
+import {onUpdated} from "vue/dist/vue";
 
 const tileStore = useTilesStore();
+const snippetStore = useSnippetStore();
+
+onUpdated(() => {
+  snippetStore.updateSnippet();
+});
 </script>
 
 <template>
@@ -14,11 +21,10 @@ const tileStore = useTilesStore();
       </div>
       <div class="tile-content-box">
         <h3 class="tile-title">{{tileStore.title}}</h3>
-        <p class="tile-content">Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm.
-          Pinnace holystone mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl. Swab barque
-          interloper chantey doubloon starboard grog black jack gangway rutters.
-          Belay yo-ho-ho keelhaul squiffy black spot yardarm spyglass sheet transom heave to.
-        </p>
+        <ul class="tile-list" v-if="tileStore.hasList">
+          <li class="tile-list-item" v-for="item in tileStore.tileItems">{{item}}</li>
+        </ul>
+        <p v-else class="tile-content">{{tileStore.tileContent}}</p>
       </div>
     </div>
   </div>
