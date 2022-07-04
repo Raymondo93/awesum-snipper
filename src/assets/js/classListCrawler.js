@@ -8,7 +8,6 @@ export function getClassList(element) {
   let list = [];
   let data = crawl(element, list);
   // Return a set to remove all the dupes
-  console.log(data);
   return [...new Set(data)]
 }
 
