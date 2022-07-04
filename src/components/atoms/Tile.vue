@@ -1,11 +1,31 @@
 <script setup>
 import StockImage from "@/assets/images/pexels-pixabay-162140.jpg";
-import {useTilesStore} from "../../stores/tiles";
 import {useSnippetStore} from "../../stores/snippet";
-import {onUpdated} from "vue/dist/vue";
+import {computed, onUpdated} from "vue";
 
-const tileStore = useTilesStore();
 const snippetStore = useSnippetStore();
+
+const props = defineProps({
+  tile: {
+    type: Object,
+    required: true
+  },
+  quantity: {
+    type: Number,
+    default: 3,
+    required: true
+  }
+});
+
+const setQuantity = computed(() => {
+  switch(props.quantity) {
+    case 3:
+      return "tile--3";
+    case 4:
+      return "tile--4"
+  }
+});
+
 
 onUpdated(() => {
   snippetStore.updateSnippet();
@@ -13,18 +33,17 @@ onUpdated(() => {
 </script>
 
 <template>
-  <div class="tile">
+  <div class="tile" :class="setQuantity">
     <div class="tile-box">
-      <div class="tile-image-box">
+      <div class="tile-image-box" v-if="props.tile.hasImage">
         <img class="tile-image" :src="StockImage" alt="tile-image" width="" height="" />
-
       </div>
       <div class="tile-content-box">
-        <h3 class="tile-title">{{tileStore.title}}</h3>
-        <ul class="tile-list" v-if="tileStore.hasList">
-          <li class="tile-list-item" v-for="item in tileStore.tileItems">{{item}}</li>
+        <h3 class="tile-title">{{props.tile.title}}</h3>
+        <ul class="tile-list" v-if="props.tile.hasList">
+          <li class="tile-list-item" v-for="item in props.tile.tileItems">{{item}}</li>
         </ul>
-        <p v-else class="tile-content">{{tileStore.tileContent}}</p>
+        <p v-else class="tile-content">{{props.tile.tileContent}}</p>
       </div>
     </div>
   </div>

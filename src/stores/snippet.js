@@ -45,7 +45,6 @@ export const useSnippetStore = defineStore({
       let component = document.getElementById(this.component);
       this.htmlSnippet = new formatStringToHtml(component.getInnerHTML()).format();
       this.getCssSnippet(component);
-      console.log(this.htmlSnippet);
     },
     resetStore(component) {
       document.getElementById(component).style.display = 'none';
