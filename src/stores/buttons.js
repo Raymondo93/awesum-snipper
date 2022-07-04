@@ -8,6 +8,10 @@ export const useButtonStore = defineStore({
     pageLink: '#',
   }),
   actions: {
-
+    updateButtonType(event) {
+      if (event.target.value === 'primary' || event.target.value === 'secondary' || event.target.value === 'warning') {
+        this.buttonType = event.target.value;
+      }
+    }
   }
 })
