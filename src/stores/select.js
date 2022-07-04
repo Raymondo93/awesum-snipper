@@ -16,8 +16,9 @@ export const useSelectStore = defineStore({
           this.tileOptions = true;
           break;
         case 'component-button':
-          console.log('hoi');
           this.buttonOptions = true;
+          break;
+        default: break;
       }
       snippetStore.getSnippet(event);
     }
