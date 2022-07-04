@@ -21,7 +21,7 @@ const getButtonStyle = computed(() => {
 
 onUpdated(() => {
   snippetStore.updateSnippet();
-})
+});
 </script>
 
 <template>
