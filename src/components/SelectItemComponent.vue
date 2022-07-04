@@ -12,8 +12,8 @@ const selectStore = useSelectStore();
     <div class="sec-welcome">
       <h1 class="welcome-title">Welcome the awesum code-snippet-printer</h1>
     </div>
-    <div class="sec-selectbox">
-      <select id="selectbox-select" name="snippet" @change="selectStore.selectComponentOption($event)">
+    <div>
+      <select class="selectbox" id="selectbox-select" name="snippet" @change="selectStore.selectComponentOption($event)">
         <option value="" default>Nothing</option>
         <option value="component-button">Buttons</option>
         <option value="component-tiles">Tiles</option>

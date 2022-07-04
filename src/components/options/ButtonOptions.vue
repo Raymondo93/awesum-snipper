@@ -8,7 +8,7 @@ const buttonStore = useButtonStore();
 <template>
   <div id="button-type-selector">
     <h4>Select type for button</h4>
-    <select @change="buttonStore.updateButtonType($event)">
+    <select class="selectbox" @change="buttonStore.updateButtonType($event)">
       <option value="primary" default>Primary</option>
       <option value="secondary">Secondary</option>
       <option value="warning">Warning</option>

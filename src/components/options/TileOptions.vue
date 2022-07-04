@@ -11,15 +11,15 @@ const tileStore = useTilesStore();
       <label for="title">Title</label>
       <input name="title" type="text" @change="tileStore.updateTitle($event)" />
     </form>
-    <select @change="tileStore.toggleList($event)">
+    <select class="selectbox" @change="tileStore.toggleList($event)">
       <option value="list">With list</option>
       <option value="content">With content</option>
     </select>
-    <select @change="tileStore.toggleImage($event)">
+    <select class="selectbox" @change="tileStore.toggleImage($event)">
       <option value="image">With image</option>
       <option value="no-image">No image</option>
     </select>
-    <select @change="tileStore.toggleQuantity($event)">
+    <select class="selectbox" @change="tileStore.toggleQuantity($event)">
       <option value="3">3</option>
       <option value="4">4</option>
     </select>
