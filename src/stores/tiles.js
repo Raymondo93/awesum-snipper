@@ -34,14 +34,20 @@ export const useTilesStore = defineStore({
     }]
   }),
   actions: {
-    updateTitle(event, index) {
-      this.tiles[index].title = event.target.value;
+    updateTitle(event) {
+      this.tiles.forEach((tile) => {
+        tile.title = event.target.value;
+      });
     },
-    toggleList(event, index) {
-      this.tiles[index].hasList = event.target.value === 'list';
+    toggleList(event) {
+      this.tiles.forEach((tile) => {
+        tile.hasList = event.target.value === "list";
+      })
     },
-    toggleImage(event, index) {
-      this.tiles[index].hasImage = event.target.value === 'image';
+    toggleImage(event) {
+      this.tiles.forEach((tile) => {
+        tile.hasImage = event.target.value === "image";
+      });
     },
     toggleQuantity(event) {
       if (event.target.value === "4") {
