@@ -19,8 +19,8 @@ const store = useSnippetStore();
     </pre>
     <h3>CSS snippet code</h3>
     <pre>
-      <code>
-        {{store.cssSnippet}}
+      <code v-for="snippet in store.cssSnippet">
+{{snippet}}
       </code>
     </pre>
   </section>
