@@ -1,7 +1,7 @@
 import {defineStore} from 'pinia';
 import formatStringToHtml from 'format-string-to-html';
 import css from '@/assets/style/style.css?raw';
-import {parseToJson} from "@/assets/js/cssToJsonParser";
+import {parseToObject, parseToCss} from "@/assets/js/cssToObjectParser";
 import {getClassList} from "@/assets/js/classListCrawler";
 
 export const useSnippetStore = defineStore({
@@ -10,7 +10,7 @@ export const useSnippetStore = defineStore({
     component: '',
     isVisible: false,
     htmlSnippet: '',
-    cssSnippet: '',
+    cssSnippet: [],
   }),
   actions: {
     getSnippet(e) {
@@ -25,7 +25,7 @@ export const useSnippetStore = defineStore({
     },
     getCssSnippet(element) {
       let usedClassList = getClassList(element);
-      let cssJson = parseToJson(css);
+      let cssJson = parseToObject(css);
       let classes = [];
       usedClassList.forEach((cssClass) => {
         for (let i = 0; i < cssJson.length; ++i) {
@@ -39,7 +39,8 @@ export const useSnippetStore = defineStore({
           }
         }
       });
-      this.cssSnippet = classes;
+      this.cssSnippet = parseToCss(classes);
+      // this.cssSnippet = classes;
     },
     updateSnippet() {
       let component = document.getElementById(this.component);
