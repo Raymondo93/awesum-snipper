@@ -5,6 +5,7 @@ export const useTilesStore = defineStore({
   id: 'tiles',
   state: () => ({
     tiles: [{
+      id: 1,
       title: 'Example title',
       hasList: true,
       hasImage: true,
@@ -14,6 +15,7 @@ export const useTilesStore = defineStore({
           '          interloper chantey doubloon starboard grog black jack gangway rutters.\n' +
           '          Belay yo-ho-ho keelhaul squiffy black spot yardarm spyglass sheet transom heave to.',
     }, {
+      id: 2,
       title: 'Example title',
       hasList: true,
       hasImage: true,
@@ -23,6 +25,7 @@ export const useTilesStore = defineStore({
           '          interloper chantey doubloon starboard grog black jack gangway rutters.\n' +
           '          Belay yo-ho-ho keelhaul squiffy black spot yardarm spyglass sheet transom heave to.',
     }, {
+      id: 3,
       title: 'Example title',
       hasList: true,
       hasImage: true,
@@ -52,6 +55,7 @@ export const useTilesStore = defineStore({
     toggleQuantity(event) {
       if (event.target.value === "4") {
         this.tiles.push({
+          id: 4,
           title: 'Example title',
           hasList: true,
           hasImage: true,

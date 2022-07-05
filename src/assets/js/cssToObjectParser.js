@@ -14,7 +14,7 @@ export function parseToObject(css) {
 export function parseToCss(cssObjects) {
   let cssString = [];
   cssObjects.forEach((object) => {
-    let selector = object.selectors + ' { \n';
+    let selector = object.selectors + '{ \n';
     let properties = '';
     for (let property in object.properties) {
       if (object.properties.hasOwnProperty(property)) {
@@ -22,7 +22,7 @@ export function parseToCss(cssObjects) {
       }
     }
 
-    cssString.push(selector + properties + '}\n \n');
+    cssString.push(selector + properties + '}\n');
   });
   return cssString;
 }

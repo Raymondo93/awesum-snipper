@@ -9,7 +9,7 @@ const tileStore = useTilesStore();
 <template>
   <div id="component-tiles">
     <div class="tiles">
-      <Tile v-for="tile in tileStore.tiles" :tile="tile" :quantity="tileStore.tiles.length"/>
+      <Tile v-for="tile in tileStore.tiles" :tile="tile" :id="tile.id" :quantity="tileStore.tiles.length"/>
     </div>
   </div>
 </template>

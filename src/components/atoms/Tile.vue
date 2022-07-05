@@ -12,8 +12,10 @@ const props = defineProps({
   },
   quantity: {
     type: Number,
-    default: 3,
-    required: true
+    required: true,
+  },
+  id: {
+    type: Number,
   }
 });
 
