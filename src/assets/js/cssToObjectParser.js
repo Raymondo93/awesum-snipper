@@ -16,7 +16,6 @@ export function parseToCss(cssObjects) {
   cssObjects.forEach((object) => {
     let selector = object.selectors + ' { \n';
     let properties = '';
-    console.log(Object.values(object.properties));
     for (let property in object.properties) {
       if (object.properties.hasOwnProperty(property)) {
           properties += '\t' + property + ': ' + object.properties[property] + '; \n';
