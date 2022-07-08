@@ -17,6 +17,7 @@ const selectStore = useSelectStore();
         <option value="" default>Nothing</option>
         <option value="component-button">Buttons</option>
         <option value="component-tiles">Tiles</option>
+        <option value="component-faq">FAQ</option>
       </select>
     </div>
     <div v-if="selectStore.buttonOptions">
