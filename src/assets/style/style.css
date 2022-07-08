@@ -153,15 +153,17 @@ body {
 }
 
 .faq-list {
+  padding: 20px 80px;
+  border: 1px solid black;
 }
 
 .faq-list li {
   list-style: none;
+  padding-bottom: 5px;
 }
 
 .faq-box {
-  margin: 0 80px;
-  border: 1px solid black;
+  padding-top: 10px;
 }
 
 .faq-question-box {
