@@ -20,9 +20,7 @@ export const useFaqStore = defineStore({
   actions: {
     toggleFaqRow(id) {
       let answer = this.questions.find((answer) => answer.id === id);
-      console.log(answer);
       answer.answerVisible = !answer.answerVisible;
-      console.log('I clicked on an element! ' + id);
     }
   }
 });
