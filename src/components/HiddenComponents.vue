@@ -2,11 +2,13 @@
 
 import TilesComponent from "./TilesComponent.vue";
 import ButtonComponent from "./ButtonComponent.vue";
+import FaqComponent from "./FaqComponent.vue";
 </script>
 
 <template>
   <section id="hidden-components" class="fit">
-    <TilesComponent />
-    <ButtonComponent button-style="primary" text="Example button" page-link="#" />
+    <tiles-component />
+    <button-component button-style="primary" text="Example button" page-link="#" />
+    <faq-component />
   </section>
 </template>
