@@ -84,7 +84,7 @@ body {
   padding: 0 25px;
 }
 
-.tile-image {
+.tile-image img {
   display: block;
   width: 100%;
   height: auto;
@@ -116,6 +116,10 @@ body {
   padding: 10px 0;
 }
 
+.tile-list {
+  list-style: none;
+}
+
 .button {
   display: block;
   margin: 15px auto;
@@ -134,7 +138,38 @@ body {
   height: 30px;
 }
 
-.selectbox{
+.selectbox {
   padding: 3px 3px;
   border-radius: 10px;
+}
+
+.faq {
+  display: block;
+  margin: 50px 0;
+}
+
+.faq-title {
+  text-align: center;
+}
+
+.faq-list {
+}
+
+.faq-list li {
+  list-style: none;
+}
+
+.faq-box {
+  margin: 0 80px;
+  border: 1px solid black;
+}
+
+.faq-question-box {
+  border: 1px solid black;
+}
+
+.supersmall {
+  display: block;
+  font-size: 8px;
+  text-align: center;
 }
