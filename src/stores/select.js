@@ -7,6 +7,14 @@ export const useSelectStore = defineStore({
   state: () => ({
     tileOptions: false,
     buttonOptions: false,
+    faqOptions: false,
+    contactOptions: false,
+    selectOptions: {
+      buttons: 'component-button',
+      tiles: 'component-tiles',
+      faq: 'component-faq',
+      contact: 'component-contact',
+    }
   }),
   actions: {
     selectComponentOption(event) {
@@ -17,6 +25,12 @@ export const useSelectStore = defineStore({
           break;
         case 'component-button':
           this.buttonOptions = true;
+          break;
+        case 'component-faq':
+          this.faqOptions = true;
+          break;
+        case 'component-contact':
+          this.contactOptions = true;
           break;
         default: break;
       }

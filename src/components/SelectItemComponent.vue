@@ -15,9 +15,7 @@ const selectStore = useSelectStore();
     <div>
       <select class="selectbox" id="selectbox-select" name="snippet" @change="selectStore.selectComponentOption($event)">
         <option value="" default>Nothing</option>
-        <option value="component-button">Buttons</option>
-        <option value="component-tiles">Tiles</option>
-        <option value="component-faq">FAQ</option>
+        <option v-for="(value, key) in selectStore.selectOptions" :value=value >{{ key }}</option>
       </select>
     </div>
     <div v-if="selectStore.buttonOptions">
