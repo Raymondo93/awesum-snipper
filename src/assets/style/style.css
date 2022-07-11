@@ -170,6 +170,10 @@ body {
   border: 1px solid black;
 }
 
+.faq-answer-box {
+  display: none;
+}
+
 .supersmall {
   display: block;
   font-size: 8px;

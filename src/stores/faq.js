@@ -19,8 +19,14 @@ export const useFaqStore = defineStore({
   }),
   actions: {
     toggleFaqRow(id) {
-      let answer = this.questions.find((answer) => answer.id === id);
-      answer.answerVisible = !answer.answerVisible;
+      // let answer = this.questions.find((answer) => answer.id === id);
+      // answer.answerVisible = !answer.answerVisible;
+      let element = document.getElementById('answerId-' + id);
+      if (element.style.display === 'none') {
+        element.style.display = 'block';
+      } else {
+        element.style.display = 'none';
+      }
     }
   }
 });
