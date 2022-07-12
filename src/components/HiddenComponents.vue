@@ -4,6 +4,7 @@ import TilesComponent from "./TilesComponent.vue";
 import ButtonComponent from "./ButtonComponent.vue";
 import FaqComponent from "./FaqComponent.vue";
 import ContactComponent from "./ContactComponent.vue";
+import BannerComponent from "./BannerComponent.vue";
 </script>
 
 <template>
@@ -12,5 +13,6 @@ import ContactComponent from "./ContactComponent.vue";
     <button-component button-style="primary" text="Example button" page-link="#" />
     <faq-component />
     <contact-component />
+    <banner-component />
   </section>
 </template>

@@ -14,6 +14,7 @@ export const useSelectStore = defineStore({
       tiles: 'component-tiles',
       faq: 'component-faq',
       contact: 'component-contact',
+      banner: 'component-banner',
     }
   }),
   actions: {
