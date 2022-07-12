@@ -174,8 +174,26 @@ body {
   display: none;
 }
 
-.supersmall {
-  display: block;
-  font-size: 8px;
+.ban-img {
+  min-height: 400px;
+  background-size: cover;
+}
+.ban-full-width {
+  margin-left: calc(-1*(100vw - 1280px) / 2);
+  margin-right: calc(-1*(100vw - 1280px) / 2);
+}
+
+.ban-content {
+  position: relative;
+  top: -200px;
   text-align: center;
+}
+
+.ban-title {
+  color: mediumpurple;
+  font-size: 48px;
+}
+
+.ban-description {
+  color: red;
 }
