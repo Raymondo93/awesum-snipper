@@ -1,7 +1,8 @@
 export function parseToObject(css) {
   let cssJson = []
-  const cssBlocks = css.split("}\n");
+  const cssBlocks = css.split("}");
   cssBlocks.forEach((block) => {
+    console.log(block);
     // For some reason there was an empty string as element.
     if (block !== "") {
       let checkedBlock = checkBlock(block);
