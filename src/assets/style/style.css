@@ -5,7 +5,7 @@ h1, h2, h3, h4, h5, h6, p, div, span {
 }
 
 body {
-  background-color: black;
+  background-color: #FBFEFF;
 }
 
 .fit {
@@ -36,8 +36,6 @@ body {
   display: inline-block;
   width: 33.33%;
   box-sizing: border-box;
-  /* border: 2px solid red; */
-  /* box-shadow: 10px 10px black; */
 }
 
 .box-link {
@@ -67,20 +65,135 @@ body {
 
 .tiles {
   display: block;
-}
-
-.tile-image {
-  display: block;
-  width: 100%;
-  height: auto;
-
+  padding: 40px 0;
 }
 
 .tile {
   display: inline-block;
+  margin: 0 -20px;
+}
+
+.tile--3 {
   width: 33%;
+  padding: 0 31px;
+
+}
+
+.tile--4 {
+  width: 25%;
+  padding: 0 25px;
+}
+
+.tile-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.tile-image-box {
+  margin-bottom: 8px;
+}
+
+.tile:first-child {
+  padding-left: 5px;
+}
+
+.tile:last-child {
+  padding-right: 0;
+}
+
+.tile-box {
+  margin: 0 15px;
+  box-shadow: 5px 10px 18px #888888;
 }
 
 .tile-content-box {
+  margin-top: 7px;
+  padding: 15px;
+}
+
+.tile-title {
+  padding: 10px 0;
+}
+
+.tile-list {
+  list-style: none;
+}
+
+.button {
+  display: block;
+  margin: 15px auto;
+  border-radius: 15px;
+}
+
+.primary-button {
+  background-color: chartreuse;
+  width: 75%;
+  height: 50px;
+}
+
+.secondary-button {
+  background-color: darkturquoise;
+  width: 50%;
+  height: 30px;
+}
+
+.selectbox {
+  padding: 3px 3px;
+  border-radius: 10px;
+}
+
+.faq {
+  display: block;
+  margin: 50px 0;
+}
+
+.faq-title {
+  text-align: center;
+}
+
+.faq-list {
+  padding: 20px 80px;
+  border: 1px solid black;
+}
+
+.faq-list li {
+  list-style: none;
+  padding-bottom: 5px;
+}
+
+.faq-box {
+  padding-top: 10px;
+}
+
+.faq-question-box {
+  border: 1px solid black;
+}
+
+.faq-answer-box {
+  display: none;
+}
+
+.ban-img {
+  min-height: 400px;
+  background-size: cover;
+}
+.ban-full-width {
+  margin-left: calc(-1*(100vw - 1280px) / 2);
+  margin-right: calc(-1*(100vw - 1280px) / 2);
+}
+
+.ban-content {
+  position: relative;
+  top: -200px;
+  text-align: center;
+}
+
+.ban-title {
+  color: mediumpurple;
+  font-size: 48px;
+}
+
+.ban-description {
   color: red;
 }

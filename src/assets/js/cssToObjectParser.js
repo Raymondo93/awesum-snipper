@@ -1,4 +1,4 @@
-export function parseToJson(css) {
+export function parseToObject(css) {
   let cssJson = []
   const cssBlocks = css.split("}\n");
   cssBlocks.forEach((block) => {
@@ -11,8 +11,24 @@ export function parseToJson(css) {
   return cssJson;
 }
 
+export function parseToCss(cssObjects) {
+  let cssString = [];
+  cssObjects.forEach((object) => {
+    let selector = object.selectors + '{ \n';
+    let properties = '';
+    for (let property in object.properties) {
+      if (object.properties.hasOwnProperty(property)) {
+          properties += '\t' + property + ': ' + object.properties[property] + '; \n';
+      }
+    }
+
+    cssString.push(selector + properties + '}\n');
+  });
+  return cssString;
+}
+
 /**
- * TODO -> check if line is comment | mediaquery | multiple selectors
+ * TODO -> check if line is mediaquery
  * @param block
  */
 function checkBlock(block) {

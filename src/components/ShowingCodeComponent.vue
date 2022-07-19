@@ -14,13 +14,13 @@ const store = useSnippetStore();
     <h3>HTML snippet code</h3>
     <pre>
       <code>
-        {{store.htmlSnippet}}
+{{store.htmlSnippet}}
       </code>
     </pre>
     <h3>CSS snippet code</h3>
     <pre>
-      <code>
-        {{store.cssSnippet}}
+      <code v-for="snippet in store.cssSnippet">
+{{snippet}}
       </code>
     </pre>
   </section>

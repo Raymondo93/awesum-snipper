@@ -1,8 +1,8 @@
 import {defineStore} from 'pinia';
 import formatStringToHtml from 'format-string-to-html';
 import css from '@/assets/style/style.css?raw';
-import {parseToJson} from "../assets/js/cssToJsonParser";
-import {getClassList} from "../assets/js/classListCrawler";
+import {parseToObject, parseToCss} from "@/assets/js/cssToObjectParser";
+import {getClassList} from "@/assets/js/classListCrawler";
 
 export const useSnippetStore = defineStore({
   id: 'snippet',
@@ -10,31 +10,49 @@ export const useSnippetStore = defineStore({
     component: '',
     isVisible: false,
     htmlSnippet: '',
-    cssSnippet: '',
+    cssSnippet: [],
   }),
   actions: {
     getSnippet(e) {
-      let code = document.getElementById(e.target.value);
+      if (this.component !== '') {
+        this.resetStore(this.component);
+      }
+      this.component = e.target.value;
+      let code = document.getElementById(this.component);
       code.style.display = 'block';
       this.htmlSnippet = new formatStringToHtml(code.getInnerHTML()).format();
-      let classList = getClassList(code);
-      console.log(classList);
       this.getCssSnippet(code);
     },
-    getCssSnippet(code) {
-      let usedClassList = getClassList(code);
-      let cssJson = parseToJson(css);
+    getCssSnippet(element) {
+      let usedClassList = getClassList(element);
+      let cssJson = parseToObject(css);
       let classes = [];
       usedClassList.forEach((cssClass) => {
         for (let i = 0; i < cssJson.length; ++i) {
-          console.log('class .' + cssClass);
-          console.log('json ' + cssJson[i].selectors);
-          if ('.' + cssClass === cssJson[i].selectors.trim()) {
+          let selector = cssJson[i].selectors.trim();
+          if (selector.includes(':')) {
+            let s = selector.split(':');
+            selector = s[0];
+          }
+          if ('.' + cssClass === selector) {
             classes.push(cssJson[i]);
           }
         }
-      })
-      this.cssSnippet = classes;
-    }
+      });
+      this.cssSnippet = parseToCss(classes);
+      // this.cssSnippet = classes;
+    },
+    updateSnippet() {
+      let component = document.getElementById(this.component);
+      this.htmlSnippet = new formatStringToHtml(component.getInnerHTML()).format();
+      this.getCssSnippet(component);
+    },
+    resetStore(component) {
+      document.getElementById(component).style.display = 'none';
+      this.$reset();
+    },
   }
-})
+});
+
+
+
