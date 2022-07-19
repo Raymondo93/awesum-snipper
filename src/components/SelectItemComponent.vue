@@ -1,7 +1,8 @@
 <script setup>
-import {useSelectStore} from "../stores/select";
+import {useSelectStore} from "../stores/select.js";
 import ButtonOptions from "./options/ButtonOptions.vue";
 import TileOptions from "./options/TileOptions.vue";
+import BannerOptions from "./options/BannerOptions.vue";
 
 const selectStore = useSelectStore();
 
@@ -23,6 +24,9 @@ const selectStore = useSelectStore();
     </div>
     <div v-if="selectStore.tileOptions">
       <tile-options/>
+    </div>
+    <div v-if="selectStore.bannerOptions">
+      <banner-options />
     </div>
   </section>
 </template>

@@ -9,6 +9,7 @@ export const useSelectStore = defineStore({
     buttonOptions: false,
     faqOptions: false,
     contactOptions: false,
+    bannerOptions: false,
     selectOptions: {
       buttons: 'component-button',
       tiles: 'component-tiles',
@@ -20,6 +21,7 @@ export const useSelectStore = defineStore({
   actions: {
     selectComponentOption(event) {
       const snippetStore = useSnippetStore();
+      this.$reset();
       switch (event.target.value) {
         case 'component-tiles':
           this.tileOptions = true;
@@ -32,6 +34,9 @@ export const useSelectStore = defineStore({
           break;
         case 'component-contact':
           this.contactOptions = true;
+          break;
+        case 'component-banner':
+          this.bannerOptions = true;
           break;
         default: break;
       }
