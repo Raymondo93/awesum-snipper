@@ -10,7 +10,7 @@ import BannerComponent from "./BannerComponent.vue";
 <template>
   <section id="hidden-components" class="fit">
     <tiles-component />
-    <button-component button-style="primary" text="Example button" page-link="#" />
+    <button-component />
     <faq-component />
     <contact-component />
     <banner-component />
