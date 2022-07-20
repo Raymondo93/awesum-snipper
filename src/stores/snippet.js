@@ -48,10 +48,12 @@ export const useSnippetStore = defineStore({
       this.getCssSnippet(component);
     },
     updateMinHeightBanner(cssClass, property, value) {
-      this.cssSnippet.forEach((c) => {
-        console.log(c);
-        console.log('haha');
-      })
+      let cssObjects = parseToObject(this.cssSnippet.join('\n'));
+      let object = cssObjects.find(obj =>
+        obj.selectors.trim() === cssClass.trim()
+      );
+      object.properties[property] = value;
+      this.cssSnippet = parseToCss(cssObjects);
     },
     resetStore(component) {
       document.getElementById(component).style.display = 'none';
