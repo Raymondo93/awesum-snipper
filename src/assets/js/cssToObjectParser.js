@@ -41,7 +41,6 @@ function checkBlock(block) {
   // remove new lines and set properties in array
   let properties = {};
   let dirtyProperties = css[1].replace(/(\r\n|\n|\r)/gm, "").split(";");
-  console.log(dirtyProperties);
   dirtyProperties.forEach((dirtyProperty) => {
     if (dirtyProperty !== "") {
       if (dirtyProperty !== " ") {
