@@ -1,14 +1,14 @@
 export function parseToObject(css) {
   let cssJson = []
-  const cssBlocks = css.split("}");
+  const cssBlocks = css.split("}").filter(element => element);
   cssBlocks.forEach((block) => {
     // For some reason there was an empty string as element.
-    if (block !== "") {
+
       if (block !== "\n") {
         let checkedBlock = checkBlock(block);
         cssJson.push(checkedBlock);
       }
-    }
+    
   });
   return cssJson;
 }
@@ -34,7 +34,7 @@ export function parseToCss(cssObjects) {
  * @param block
  */
 function checkBlock(block) {
-  let css = block.split("{");
+  let css = block.split("{").filter(element => element);
   let result = {
     "selectors": css[0].replace(/(\r\n|\n|\r)/gm, ""),
   }
