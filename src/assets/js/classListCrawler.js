@@ -22,7 +22,7 @@ function crawl(element, list) {
     if(classList.length > 1) {
       list.push(...classList);
     } else {
-      list.push(classList);
+      list.push(...classList);
     }
   }
 
