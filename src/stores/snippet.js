@@ -29,18 +29,32 @@ export const useSnippetStore = defineStore({
       let classes = [];
       usedClassList.forEach((cssClass) => {
         for (let i = 0; i < cssJson.length; ++i) {
-          let selector = cssJson[i].selectors.trim();
-          if (selector.includes(':')) {
-            let s = selector.split(':');
-            selector = s[0];
+          let selectors = cssJson[i].selectors.trim();
+          if (selectors.includes(':')) {
+            let s = selectors.split(':').filter(e => e);
+            selectors = s[0];
           }
-          if ('.' + cssClass === selector) {
-            classes.push(cssJson[i]);
+          // check if multiple selectors
+          let selector = selectors.split('.').filter(e => e);
+          if (selector.length === 1) {
+            if (cssClass === selector[0]) {
+              classes.push(cssJson[i]);
+            }
+          } else {
+            let included = true;
+            selector.forEach((s) => {
+              s = s.replace(/(\s|\t|>|'*')/g, '');
+              if (!usedClassList.includes(s.trim())) {
+                included = false;
+              }
+            });
+            if (included) {
+              classes.push(cssJson[i]);
+            }
           }
         }
       });
-      this.cssSnippet = parseToCss(classes);
-      // this.cssSnippet = classes;
+      this.cssSnippet = parseToCss([...new Set(classes)]);
     },
     updateSnippet() {
       let component = document.getElementById(this.component);
