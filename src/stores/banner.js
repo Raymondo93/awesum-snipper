@@ -15,7 +15,7 @@ export const useBannerStore = defineStore({
         element.style.minHeight = event.target.value + 'px';
       }
       const snippetStore = useSnippetStore();
-      snippetStore.updateMinHeightBanner('.ban-img', 'min-height', event.target.value + 'px');
+      snippetStore.updateCssProperty('.ban-img', 'min-height', event.target.value + 'px');
     },
   }
 })
