@@ -1,4 +1,5 @@
 <script setup>
+import {onUpdated} from "vue";
 import BannerImage from "@/assets/images/pexels-irlando-calzada-979729.jpg";
 import FallbackImage from "@/assets/images/jake-weirick-1Ad511F-ia0-unsplash.jpg"
 import {useBannerStore} from "@/stores/banner.js";
