@@ -218,7 +218,7 @@ body {
   height: auto;
 }
 
-.banhalf-width.banhalf-is-right > .hanhalf.content {
+.banhalf-width.banhalf-is-right > .banhalf-content {
   order: 1;
 }
 
