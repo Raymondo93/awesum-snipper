@@ -3,12 +3,10 @@ export function parseToObject(css) {
   const cssBlocks = css.split("}").filter(element => element);
   cssBlocks.forEach((block) => {
     // For some reason there was an empty string as element.
-
-      if (block !== "\n") {
-        let checkedBlock = checkBlock(block);
-        cssJson.push(checkedBlock);
-      }
-    
+    if (block !== "\n") {
+      let checkedBlock = checkBlock(block);
+      cssJson.push(checkedBlock);
+    }-
   });
   return cssJson;
 }
