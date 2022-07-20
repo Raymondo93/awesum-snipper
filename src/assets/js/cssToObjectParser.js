@@ -6,7 +6,7 @@ export function parseToObject(css) {
     if (block !== "\n") {
       let checkedBlock = checkBlock(block);
       cssJson.push(checkedBlock);
-    }-
+    }
   });
   return cssJson;
 }
