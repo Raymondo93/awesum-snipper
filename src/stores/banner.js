@@ -4,6 +4,9 @@ import {useSnippetStore} from "./snippet.js";
 export const useBannerStore = defineStore({
   id: 'banner',
   state: () => ({
+    isFullWidth: true,
+    banImgIsRight: true,
+    banHasButton: true,
     bannerTitle: 'Hello, world!',
     bannerDescription: 'Hai, and welcome to this awesome code snippet application',
     bannerHeight: undefined,
@@ -17,5 +20,14 @@ export const useBannerStore = defineStore({
       const snippetStore = useSnippetStore();
       snippetStore.updateCssProperty('.ban-img', 'min-height', event.target.value + 'px');
     },
+    toggleBannerImageWidth(event) {
+      this.isFullWidth = event.target.checked;
+    },
+    toggleImagePosition(event) {
+      this.banImgIsRight = event.target.value === 'is-right';
+    },
+    toggleButton(event) {
+      this.banHasButton = event.target.value === 'checked';
+    }
   }
 })
