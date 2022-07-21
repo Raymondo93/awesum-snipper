@@ -235,3 +235,35 @@ body {
   margin-left: calc(-1 * (100vw - 1280px) / 2);
   order: 1;
 }
+
+.usp {
+  margin: 40px 0;
+}
+
+.usp-list {
+  display: flex;
+  width: 100%;
+  list-style-type: none;
+}
+
+.usp-box-icon {
+  text-align: center;
+}
+
+.usp-box {
+  width: 33.33%;
+  padding: 0 30px;
+}
+
+.usp-box-content {
+  padding: 0 5px;
+}
+
+.usp-box-title {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.usp-box-description {
+  color: red;
+}
