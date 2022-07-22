@@ -18,7 +18,7 @@ function crawl(element, list) {
     }
   }
   if (element.classList.value !== "") {
-    let classList = element.classList.value.split(" ");
+    let classList = element.classList.value.split(" ").filter(e => e);
     if(classList.length > 1) {
       list.push(...classList);
     } else {
