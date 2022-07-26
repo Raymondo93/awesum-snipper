@@ -17,6 +17,7 @@ export const useSelectStore = defineStore({
       contact: 'component-contact',
       banner: 'component-banner',
       usp: 'component-usp',
+      content: 'component-content',
     }
   }),
   actions: {

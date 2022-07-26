@@ -27,7 +27,7 @@ export const useBannerStore = defineStore({
       this.banImgIsRight = event.target.value === 'is-right';
     },
     toggleButton(event) {
-      this.banHasButton = event.target.value === 'checked';
+      this.banHasButton = event.target.checked;
     }
   }
 })
