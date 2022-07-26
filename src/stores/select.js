@@ -5,11 +5,16 @@ import {useSnippetStore} from "./snippet";
 export const useSelectStore = defineStore({
   id: 'select',
   state: () => ({
-    tileOptions: false,
-    buttonOptions: false,
-    faqOptions: false,
-    contactOptions: false,
-    bannerOptions: false,
+    options: {
+      tile: false,
+      button: false,
+      faq: false,
+      contact: false,
+      banner: false,
+      usp: false,
+      content: false,
+    },
+
     selectOptions: {
       buttons: 'component-button',
       tiles: 'component-tiles',
@@ -26,19 +31,25 @@ export const useSelectStore = defineStore({
       this.$reset();
       switch (event.target.value) {
         case 'component-tiles':
-          this.tileOptions = true;
+          this.options.tile = true;
           break;
         case 'component-button':
-          this.buttonOptions = true;
+          this.options.button = true;
           break;
         case 'component-faq':
-          this.faqOptions = true;
+          this.options.faq = true;
           break;
         case 'component-contact':
-          this.contactOptions = true;
+          this.options.contact = true;
           break;
         case 'component-banner':
-          this.bannerOptions = true;
+          this.options.banner = true;
+          break;
+        case 'component-usp':
+          this.options.usp = true;
+          break;
+        case 'component-content':
+          this.options.content = true;
           break;
         default: break;
       }
