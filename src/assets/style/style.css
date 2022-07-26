@@ -12,6 +12,7 @@ body {
   display: block;
   max-width: 1280px;
   margin: 0 auto;
+  border-right: 1px solid black;
 }
 
 .snippet-code {
@@ -266,4 +267,46 @@ body {
 
 .usp-box-description {
   color: red;
+}
+
+.content-section {
+  display: flex;
+  width: 100%;
+  padding: 20px 0;
+  margin: 10px 0;
+}
+
+.content-img-box {
+  width: 50%;
+}
+
+.content-img img {
+  width: 100%;
+}
+
+.content-content-box {
+  width: 50%;
+  padding: 0 25px;
+}
+
+.content-content-title {
+  padding: 15px 0;
+}
+
+.content-section.content-img-is-left > .content-img-box {
+  order: 1;
+}
+
+.content-section.content-img-is-left > .content-content-box {
+  order: 2;
+}
+
+.content-section.content-img-is-right > .content-img-box {
+  order: 2;
+}
+
+.content-section.content-img-is-right > .content-content-box {
+  order: 1;
+  padding-left: 0;
+  padding-right: 20px;
 }
