@@ -3,6 +3,7 @@ import {useSelectStore} from "../stores/select.js";
 import ButtonOptions from "./options/ButtonOptions.vue";
 import TileOptions from "./options/TileOptions.vue";
 import BannerOptions from "./options/BannerOptions.vue";
+import ContentOptions from "./options/ContentOptions.vue";
 
 const selectStore = useSelectStore();
 
@@ -19,14 +20,17 @@ const selectStore = useSelectStore();
         <option v-for="(value, key) in selectStore.selectOptions" :value=value >{{ key }}</option>
       </select>
     </div>
-    <div v-if="selectStore.buttonOptions">
+    <div v-if="selectStore.options.button">
       <button-options/>
     </div>
-    <div v-if="selectStore.tileOptions">
+    <div v-if="selectStore.options.tile">
       <tile-options/>
     </div>
-    <div v-if="selectStore.bannerOptions">
+    <div v-if="selectStore.options.banner">
       <banner-options />
+    </div>
+    <div v-if="selectStore.options.content">
+      <content-options />
     </div>
   </section>
 </template>

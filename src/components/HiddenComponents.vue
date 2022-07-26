@@ -6,6 +6,7 @@ import FaqComponent from "./FaqComponent.vue";
 import ContactComponent from "./ContactComponent.vue";
 import BannerComponent from "./BannerComponent.vue";
 import UspComponent from "./UspComponent.vue";
+import ContentComponent from "./ContentComponent.vue";
 </script>
 
 <template>
@@ -16,5 +17,6 @@ import UspComponent from "./UspComponent.vue";
     <contact-component />
     <banner-component />
     <usp-component />
+    <content-component />
   </section>
 </template>
