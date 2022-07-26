@@ -38,19 +38,14 @@ function checkBlock(block) {
   }
   // remove new lines and set properties in array
   let properties = {};
-  let dirtyProperties = css[1].replace(/(\r\n|\n|\r)/gm, "").split(";");
+  let dirtyProperties = css[1].replace(/(\r\n|\n|\r)/gm, "").trim().split(";").filter(e => e);
   dirtyProperties.forEach((dirtyProperty) => {
-    if (dirtyProperty !== "") {
-      if (dirtyProperty !== " ") {
-        let propertyValue = dirtyProperty.split(":");
-        if (!propertyValue[0].replace(/\s|\t/g, "").startsWith("/*")) {
-          if (!propertyValue[0].replace(/\s|\t/g, "").startsWith("*/")) {
-            properties[propertyValue[0].replace(/\s|\t/g, "")] = propertyValue[1];
-          } else {
-            properties[propertyValue[0].replace(/\s|\t/g, "").substring(2)] = propertyValue[1];
-
-          }
-        }
+    let propertyValue = dirtyProperty.split(":");
+    if (!propertyValue[0].replace(/\s|\t/g, "").startsWith("/*")) {
+      if (!propertyValue[0].replace(/\s|\t/g, "").startsWith("*/")) {
+        properties[propertyValue[0].replace(/\s|\t/g, "")] = propertyValue[1];
+      } else {
+        properties[propertyValue[0].replace(/\s|\t/g, "").substring(2)] = propertyValue[1];
 
       }
     }
