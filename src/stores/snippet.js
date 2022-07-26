@@ -39,7 +39,7 @@ export const useSnippetStore = defineStore({
           if (selector.length === 1) {
             if (cssClass === selector[0]) {
               classes.push(cssJson[i]);
-              // TODO => check all html elements instead only img
+              // TODO => check all html elements instead only img (not working properly this)
             } else if (selector[0].includes(' img')) {
               classes.push(cssJson[i]);
             }

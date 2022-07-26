@@ -34,18 +34,18 @@ export function parseToCss(cssObjects) {
 function checkBlock(block) {
   let css = block.split("{").filter(element => element);
   let result = {
-    "selectors": css[0].replace(/(\r\n|\n|\r)/gm, ""),
+    "selectors": css[0].trim(),
   }
   // remove new lines and set properties in array
   let properties = {};
-  let dirtyProperties = css[1].replace(/(\r\n|\n|\r)/gm, "").trim().split(";").filter(e => e);
+  let dirtyProperties = css[1].trim().split(";").filter(e => e);
   dirtyProperties.forEach((dirtyProperty) => {
     let propertyValue = dirtyProperty.split(":");
-    if (!propertyValue[0].replace(/\s|\t/g, "").startsWith("/*")) {
-      if (!propertyValue[0].replace(/\s|\t/g, "").startsWith("*/")) {
-        properties[propertyValue[0].replace(/\s|\t/g, "")] = propertyValue[1];
+    if (!propertyValue[0].trim().startsWith("/*")) {
+      if (!propertyValue[0].trim().startsWith("*/")) {
+        properties[propertyValue[0].trim()] = propertyValue[1];
       } else {
-        properties[propertyValue[0].replace(/\s|\t/g, "").substring(2)] = propertyValue[1];
+        properties[propertyValue[0].trim().substring(2)] = propertyValue[1];
 
       }
     }
